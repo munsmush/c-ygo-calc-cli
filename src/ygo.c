@@ -26,5 +26,5 @@ void declareLP(int *players, int LP){
 	*players = LP;
 }
 
-int calcLP(int *player, int ogLP){
+void calcLP(int *players){
 }
