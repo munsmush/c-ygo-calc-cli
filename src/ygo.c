@@ -17,7 +17,17 @@ int main(int argc, char *argv[]){
 		printf("Incorrect number of arguments");
 	}
 
-	printf("Player 1: %d   Player 2: %d\n", *players, *(players++));
+	while(/*Not exit hotkey*/){
+	printf("Player 1: %d   Player 2: %d\n\n", *players, *(players++));
+
+	printf("Subtract Life Points"\n);
+	printf("Add Life Points"\n);
+	printf("Reset"\n);
+	printf("Flip a coin\n");
+	printf("Roll a die"\n);
+	printf("Exit"\n);
+	printf("Choose an option:"\n);
+	}
 }
 
 void declareLP(int *players, int LP){
