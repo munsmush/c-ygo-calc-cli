@@ -17,16 +17,20 @@ int main(int argc, char *argv[]){
 		printf("Incorrect number of arguments");
 	}
 
-	while(/*Not exit hotkey*/){
-	printf("Player 1: %d   Player 2: %d\n\n", *players, *(players++));
+	int choice = -1;
+	
+	while(choice != 6){
+		printf("Player 1: %d   Player 2: %d\n\n", *players, *(players++));
+	
+		printf("1: Subtract Life Points\n");
+		printf("2: Add Life Points\n");
+		printf("3: Reset Life Points\n");
+		printf("4: Flip a coin\n");
+		printf("5: Roll a die\n");
+		printf("6: Exit\n\n");
+		printf("Choose an option: ");
 
-	printf("Subtract Life Points"\n);
-	printf("Add Life Points"\n);
-	printf("Reset"\n);
-	printf("Flip a coin\n");
-	printf("Roll a die"\n);
-	printf("Exit"\n);
-	printf("Choose an option:"\n);
+		scanf("%d", &choice);
 	}
 }
 
@@ -36,5 +40,39 @@ void declareLP(int *players, int LP){
 	*players = LP;
 }
 
-void calcLP(int *players){
+void calcLP(int *players, int choice){
+	int p; //Amount of points to + or -
+	int player;
+	
+	printf("Choose which player: ");
+	scanf("%d", &player);
+
+	printf("Enter amount: ");
+	scanf("%d", &p);
+
+	if(choice == 1){
+		if(player == 1){
+			*players == *players - p;
+		}
+		else if(player == 2){
+			players++;
+			*players == *players - p;
+		}
+		else{
+			printf("Error: Wrong input");
+		}
+	}
+	else{
+		if(player == 1){
+			*players == *players + p;
+		}
+		else if(player == 2){
+			players++;
+			*players == *players + p;
+		}
+		else{
+			printf("Error: Wrong input");
+		}
+
+	}
 }
