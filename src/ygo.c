@@ -20,7 +20,8 @@ int main(int argc, char *argv[]){
 	int choice = -1;
 	
 	while(choice != 6){
-		printf("Player 1: %d   Player 2: %d\n\n", *players, *(players++));
+		system("clear");
+		printf("Player 1: %d   Player 2: %d\n\n", *players, players[1]);
 	
 		printf("1: Subtract Life Points\n");
 		printf("2: Add Life Points\n");
@@ -31,6 +32,21 @@ int main(int argc, char *argv[]){
 		printf("Choose an option: ");
 
 		scanf("%d", &choice);
+
+		switch(choice){
+			case 1:
+				calcLP(players, choice);
+				break;
+			case 2:
+				calcLP(players, choice);
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+		}
 	}
 }
 
@@ -52,11 +68,11 @@ void calcLP(int *players, int choice){
 
 	if(choice == 1){
 		if(player == 1){
-			*players == *players - p;
+			*players = *players - p;
 		}
 		else if(player == 2){
 			players++;
-			*players == *players - p;
+			*players = *players - p;
 		}
 		else{
 			printf("Error: Wrong input");
@@ -64,15 +80,22 @@ void calcLP(int *players, int choice){
 	}
 	else{
 		if(player == 1){
-			*players == *players + p;
+			*players = *players + p;
 		}
 		else if(player == 2){
 			players++;
-			*players == *players + p;
+			*players = *players + p;
 		}
 		else{
 			printf("Error: Wrong input");
 		}
-
 	}
+}
+
+void coin(){
+	
+}
+
+void dice(){
+	
 }
