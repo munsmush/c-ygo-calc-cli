@@ -41,8 +41,10 @@ int main(int argc, char *argv[]){
 				calcLP(players, choice);
 				break;
 			case 3:
+				resetLP(players, argc, argv);
 				break;
 			case 4:
+				coin();
 				break;
 			case 5:
 				break;
@@ -92,8 +94,32 @@ void calcLP(int *players, int choice){
 	}
 }
 
+void resetLP(int *players, int argc, char *argv[]){
+	if(argc == 1){
+		*players = DefaultLP;
+		players++;
+		*players = DefaultLP;
+
+	}
+	else if(argc == 2){
+		int LP = atoi(argv[1]);
+		*players = LP;
+		players++;
+		*players = LP;
+	}
+}
+
 void coin(){
-	
+	system("clear");
+	int result = rand() % 2;
+	if(result == 1){
+		printf("Heads");
+	}
+	else{
+		printf("Tails");
+	}
+	puts("Press any key to continue...\n");
+	while(getchar() != 27);	
 }
 
 void dice(){
